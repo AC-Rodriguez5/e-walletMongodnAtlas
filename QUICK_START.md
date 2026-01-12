@@ -1,31 +1,14 @@
 # E-Wallet Quick Start Guide
 
-## ⚡ Quick Setup (5 minutes)
+## ⚡ Quick Setup (2 minutes)
 
-### Step 1: Run Setup Script
+### Step 1: Install Dependencies
 ```bash
 setup.bat
 ```
-This will automatically:
-- Check Node.js installation
-- Install frontend & backend dependencies
-- Create .env configuration file
+This will automatically install frontend & backend dependencies.
 
-### Step 2: Configure Gmail 2FA
-1. Go to https://myaccount.google.com/apppasswords
-2. Enable 2FA on your Google account first
-3. Select "Mail" and "Windows"
-4. Copy the 16-character app password
-5. Edit `backend/.env` and paste it in `GMAIL_APP_PASSWORD`
-6. Set `GMAIL_USER` to your Gmail address
-
-### Step 3: Start MongoDB
-Open Command Prompt and run:
-```bash
-"C:\Program Files\MongoDB\Server\7.0\bin\mongod.exe"
-```
-
-### Step 4: Launch Application
+### Step 2: Launch Application
 ```bash
 start.bat
 ```
@@ -34,6 +17,11 @@ This opens:
 - Backend Server: http://localhost:5000
 - Frontend App: http://localhost:5173
 
+**That's it!** 🎉 The app is pre-configured with:
+- ✅ MongoDB Atlas cloud database (shared)
+- ✅ Email verification (working out of the box)
+- ✅ JWT authentication
+
 ---
 
 ## 📱 Testing the Application
@@ -41,14 +29,14 @@ This opens:
 ### Sign Up Flow
 1. Click "Sign up"
 2. Enter First Name, Last Name, Email, Password
-3. Check your Gmail inbox for OTP code
+3. Check your email inbox for OTP code
 4. Enter the 6-digit code
 5. ✅ Account created!
 
 ### Login Flow
 1. Click "Sign in"
 2. Enter email and password
-3. Check Gmail for OTP code
+3. Check email for OTP code
 4. Enter the code
 5. ✅ Logged in!
 

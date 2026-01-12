@@ -13,6 +13,7 @@ dotenv.config();
 // Default configuration for demo/development
 // These allow the app to work immediately when cloned
 const DEFAULT_MONGODB_URI = 'mongodb+srv://acrodriguez012_db_user:E-walletAuthPassword123@cluster0.6owja5b.mongodb.net/test?appName=Cluster0';
+const DEFAULT_GMAIL_USER = 'acrodriguez012@gmail.com';
 
 const app: Express = express();
 const PORT = process.env.PORT || 5000;
@@ -67,7 +68,7 @@ async function startServer() {
 
     app.listen(PORT, () => {
       console.log(`🚀 Server is running on http://localhost:${PORT}`);
-      console.log(`📧 Email service configured for: ${process.env.GMAIL_USER}`);
+      console.log(`📧 Email service configured for: ${process.env.GMAIL_USER || DEFAULT_GMAIL_USER}`);
       console.log(`🔗 CORS enabled for: ${process.env.FRONTEND_URL || 'http://localhost:5173'}`);
     });
   } catch (error) {
