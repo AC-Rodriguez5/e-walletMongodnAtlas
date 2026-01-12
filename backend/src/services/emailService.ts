@@ -64,16 +64,21 @@ export async function sendOTPEmail(
       `,
     }[purpose];
 
+    const fromEmail = process.env.GMAIL_USER || DEFAULT_GMAIL_USER;
+    
+    console.log(`📧 Sending OTP email to ${email} from ${fromEmail}...`);
+    
     await transporter.sendMail({
-      from: process.env.GMAIL_USER,
+      from: fromEmail,
       to: email,
       subject: subject,
       html: htmlContent,
     });
 
+    console.log(`✅ OTP email sent successfully to ${email}`);
     return true;
   } catch (error) {
-    console.error('Error sending OTP email:', error);
+    console.error('❌ Error sending OTP email:', error);
     return false;
   }
 }
