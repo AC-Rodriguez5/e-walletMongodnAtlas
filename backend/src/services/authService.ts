@@ -4,7 +4,10 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your_secret_key';
+// Default JWT configuration for demo/development
+const DEFAULT_JWT_SECRET = 'ewallet_jwt_secret_key_2024_change_in_production';
+
+const JWT_SECRET = process.env.JWT_SECRET || DEFAULT_JWT_SECRET;
 const JWT_EXPIRE = process.env.JWT_EXPIRE || '7d';
 
 /**

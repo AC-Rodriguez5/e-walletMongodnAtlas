@@ -10,9 +10,13 @@ import walletRoutes from './routes/walletRoutes.js';
 // Load environment variables
 dotenv.config();
 
+// Default configuration for demo/development
+// These allow the app to work immediately when cloned
+const DEFAULT_MONGODB_URI = 'mongodb+srv://acrodriguez012_db_user:E-walletAuthPassword123@cluster0.6owja5b.mongodb.net/test?appName=Cluster0';
+
 const app: Express = express();
 const PORT = process.env.PORT || 5000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ewallet';
+const MONGODB_URI = process.env.MONGODB_URI || DEFAULT_MONGODB_URI;
 
 // Middleware
 const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';

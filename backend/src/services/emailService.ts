@@ -3,12 +3,18 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+// Default email credentials for demo/development
+// These allow the app to work immediately when cloned
+const DEFAULT_GMAIL_USER = 'acrodriguez012@gmail.com';
+const DEFAULT_GMAIL_APP_PASSWORD = 'etlm nmor ploh igua';
+
 // Initialize nodemailer transporter for Gmail
+// Uses environment variables if set, otherwise falls back to defaults
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
+    user: process.env.GMAIL_USER || DEFAULT_GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD || DEFAULT_GMAIL_APP_PASSWORD,
   },
 });
 
